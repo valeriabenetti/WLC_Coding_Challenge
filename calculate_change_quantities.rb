@@ -1,7 +1,7 @@
 def calculate_change_quantities(cost, payment)
-  # Check if cost or payment is null
-  if cost.nil? || payment.nil?
-    raise ArgumentError, "Both cost and payment must be provided"
+  # Check if cost or payment is nil or undefined
+  if cost.nil? || payment.nil? || !defined?(cost) || !defined?(payment)
+    raise ArgumentError, "Both cost and payment must be provided and defined"
   end
 
   # Check if cost or payment is a string
