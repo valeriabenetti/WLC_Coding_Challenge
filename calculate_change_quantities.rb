@@ -1,5 +1,6 @@
 def calculate_change_quantities(cost, payment)
   # Check if cost or payment is null
+  # TODO: Refactor for undefined values i.e. calculate_change_quantities(foo, bar)
   if cost.nil? || payment.nil?
     raise ArgumentError, "Both cost and payment must be provided"
   end
