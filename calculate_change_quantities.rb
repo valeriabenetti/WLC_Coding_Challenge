@@ -5,7 +5,7 @@ def calculate_change_quantities(cost, payment)
   end
 
   # Check if cost or payment is a string
-  if cost.is_a?(String) || payment.is_a?(String)
+  if !cost.is_a?(Numeric) || !payment.is_a?(Numeric)
     raise ArgumentError, "Cost and payment must be numeric values"
   end
 

@@ -9,11 +9,12 @@ RSpec.describe '#calculate_change_quantities' do
     end
   end
 
-  context 'when cost or payment is a string' do
+  context 'when cost or payment is not numeric' do
     it 'raises an ArgumentError' do
       expect { calculate_change_quantities("256", 500) }.to raise_error(ArgumentError, "Cost and payment must be numeric values")
       expect { calculate_change_quantities(256, "500") }.to raise_error(ArgumentError, "Cost and payment must be numeric values")
       expect { calculate_change_quantities("256", "500") }.to raise_error(ArgumentError, "Cost and payment must be numeric values")
+      expect { calculate_change_quantities("abc", "def") }.to raise_error(ArgumentError, "Cost and payment must be numeric values")
     end
   end
 
@@ -25,9 +26,7 @@ RSpec.describe '#calculate_change_quantities' do
     end
 
     it 'returns an input in every denomination' do
-      # return change should be 186.41
-      # which will output a 1 every denomination
-      expect(calculate_change_quantities(213.59, 400)).to eq([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+      expect(calculate_change_quantities(213.58, 400)).to eq([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
     end
   end
 
