@@ -1,6 +1,6 @@
-# White Label Code Challenge
+#White Label Code Challenge
 
-Write a function the takes in a cost and payment and outputs an array of the quantities for the denominations to be given in change. [<# of 100s>, <# of 50s>, <# of 20s>, ... <# of pennies>]
+Write a function that takes in a cost and payment and outputs an array of the quantities for the denominations to be given in change. [<# of 100s>, <# of 50s>, <# of 20s>, ... <# of pennies>]
 
 
 This Ruby function calculates the quantities of denominations to be given as change based on a provided cost and payment.
@@ -20,9 +20,10 @@ require_relative 'calculate_change_quantities.rb'
 ## Call the function
 calculate_change_quantities(256, 500)
 ```
+
 You can replace `256` and `500` with any number of your choice
 
-## Functionality
+##Functionality
 
 The `calculate_change_quantities` function takes in two arguments:
 
@@ -31,7 +32,7 @@ The `calculate_change_quantities` function takes in two arguments:
 
 It should then calculate the change by subtracting the cost form payment. Next, it should determine the quantities of each denomination (e.g., bills and coins) required to make up the change. The function ensures robust error handling for null inputs, string inputs, negative change and cases where cost equals payment.
 
-#### Edge Cases Handled
+####Edge Cases Handled
 
 - **Null Inputs:** The function raises an ArgumentError if either `cost` or `payment` is null or not provided.
 - **String Inputs:** The function raises an ArgumentError if either `cost` or `payment` is a string. 
